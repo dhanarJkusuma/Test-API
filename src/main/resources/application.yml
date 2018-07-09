@@ -1,0 +1,15 @@
+spring:
+ database:
+   driverClassName: org.postgresql.Driver
+ datasource:
+   username: test
+   password: root
+   platform: postgres
+   url: jdbc:postgresql://localhost:5432/loket
+ profiles:
+   active: dev
+ jpa:
+   database: POSTGRESQL
+   hibernate:
+     ddl-auto: none
+   show-sql: true
