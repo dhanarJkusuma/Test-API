@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "2486f725-aebc-4bfe-aa30-31497b5c5091",
+		"name": "Loket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "INTERNAL | CATEGORY | CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"MUSIC POP PENUH GAYA\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/internal/category/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"internal",
+						"category",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INTERNAL | CATEGORY | FETCH",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"MUSIC POP PENUH GAYA\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/internal/category/get_info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"internal",
+						"category",
+						"get_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INTERNAL | CATEGORY | GET DETAIL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"MUSIC POP PENUH GAYA\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/internal/category/get_detail?id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"internal",
+						"category",
+						"get_detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INTERNAL | CATEGORY | UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"MUSIC POP PENUH KEBOHONGAN\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/internal/category/update?id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"internal",
+						"category",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INTERNAL | CATEGORY | DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"MUSIC POP PENUH KEBOHONGAN\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/internal/category/delete?id=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"internal",
+						"category",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY | GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"MUSIC POP PENUH KEBOHONGAN\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/category/get_info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"category",
+						"get_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCATION | CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Lapangan Soekarno Hatta\",\n\t\"address\": \"Jl Merdeka 45\",\n\t\"city\": \"DKI Jakarta\",\n\t\"latitude\": -6.125581,\n\t\"longitude\": 106.652483\n}"
+				},
+				"url": {
+					"raw": "{{url}}/location/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"location",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCATION | FETCH",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Lapangan Soekarno Hatta\",\n\t\"address\": \"Jl Merdeka 45\",\n\t\"city\": \"DKI Jakarta\",\n\t\"latitude\": -6.125581,\n\t\"longitude\": 106.652483\n}"
+				},
+				"url": {
+					"raw": "{{url}}/location/get_info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"location",
+						"get_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT | CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"name\": \"KONSER BEN METAL\",\n\t\"organizerName\": \"BRING ME THE HORIZON\",\n\t\"description\": \"Konsernya manteb euy\",\n\t\"startDate\": \"2018-08-10\",\n\t\"endDate\": \"2018-08-15\",\n\t\"startTime\": \"10:00\",\n\t\"endTime\": \"22:00\",\n\t\"categoryId\" : \"4\",\n\t\"locationId\": 1\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/event/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"event",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT | FILTER",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"name\": \"KONSER BEN METAL\",\n\t\"organizerName\": \"BRING ME THE HORIZON\",\n\t\"description\": \"Konsernya manteb euy\",\n\t\"startDate\": \"2018-08-10\",\n\t\"endDate\": \"2018-08-15\",\n\t\"startTime\": \"10:00\",\n\t\"endTime\": \"22:00\",\n\t\"categoryId\" : \"4\",\n\t\"locationId\": 1\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/event/get_info?search_name=KONSER&category=music-metal&city=DKI Jakarta&search_date=2018-08-10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"event",
+						"get_info"
+					],
+					"query": [
+						{
+							"key": "search_name",
+							"value": "KONSER"
+						},
+						{
+							"key": "category",
+							"value": "music-metal"
+						},
+						{
+							"key": "city",
+							"value": "DKI Jakarta"
+						},
+						{
+							"key": "search_date",
+							"value": "2018-08-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT | DETAIL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"name\": \"KONSER BEN METAL\",\n\t\"organizerName\": \"BRING ME THE HORIZON\",\n\t\"description\": \"Konsernya manteb euy\",\n\t\"startDate\": \"2018-08-10\",\n\t\"endDate\": \"2018-08-15\",\n\t\"startTime\": \"10:00\",\n\t\"endTime\": \"22:00\",\n\t\"categoryId\" : \"4\",\n\t\"locationId\": 1\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/event/get_detail?slug=konser-ben-metal",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"event",
+						"get_detail"
+					],
+					"query": [
+						{
+							"key": "slug",
+							"value": "konser-ben-metal"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT | UPLOAD - THUMBNAIL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/event/upload_thumbnail?slug=konser-ben-metal",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"event",
+						"upload_thumbnail"
+					],
+					"query": [
+						{
+							"key": "slug",
+							"value": "konser-ben-metal"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EVENT | UPLOAD - ORGANIZER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/event/upload_organizer?slug=konser-ben-metal",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"event",
+						"upload_organizer"
+					],
+					"query": [
+						{
+							"key": "slug",
+							"value": "konser-ben-metal"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TICKET | CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"name\": \"KONSER BEN METAL\",\n\t\"eventId\": 2,\n\t\"quantity\": 100,\n\t\"description\": \"beli aja\",\n\t\"flag\": \"PAID\",\n\t\"price\": 4000,\n\t\"startDate\": \"2018-05-05\",\n\t\"endDate\": \"2018-08-08\"\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/event/ticket/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"event",
+						"ticket",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TRANSACTION | PURCHASE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"customer\": {\n\t\t\"firstName\": \"Adi\",\n\t\t\"lastName\": \"Nurlemma\",\n\t\t\"email\": \"adi.nurlemma@gmail.com\",\n\t\t\"phone\": \"08282828282\",\n\t\t\"dateOfBirth\": \"1995-08-06\",\n\t\t\"gender\": \"FEMALE\"\n\t},\n\t\"eventId\": 2,\n\t\"items\": [\n\t\t{\n\t\t\t\"ticketId\": 1,\n\t\t\t\"quantity\": 1\n\t\t}\n\t]\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/transaction/purchase",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"transaction",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TRANSACTION | FETCH",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"customer\": {\n\t\t\"firstName\": \"Adi\",\n\t\t\"lastName\": \"Nurlemma\",\n\t\t\"email\": \"adi.nurlemma@gmail.com\",\n\t\t\"phone\": \"08282828282\",\n\t\t\"dateOfBirth\": \"1995-08-06\",\n\t\t\"gender\": \"FEMALE\"\n\t},\n\t\"eventId\": 2,\n\t\"items\": [\n\t\t{\n\t\t\t\"ticketId\": 1,\n\t\t\t\"quantity\": 1\n\t\t}\n\t]\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/transaction/get_info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"transaction",
+						"get_info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

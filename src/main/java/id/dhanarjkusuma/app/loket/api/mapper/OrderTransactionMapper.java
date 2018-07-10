@@ -13,6 +13,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import static id.dhanarjkusuma.app.loket.helper.Utils.formatGeneralDate;
+import static id.dhanarjkusuma.app.loket.helper.Utils.formatGeneralDateTime;
 
 @Mapper(config = MappingConfig.class, uses = { EventMapper.class })
 public abstract class OrderTransactionMapper {
@@ -34,7 +35,7 @@ public abstract class OrderTransactionMapper {
 
     @AfterMapping
     protected void fillDateAndCustomer(@MappingTarget OrderTransactionResponse response, OrderTransaction orderTransaction){
-        response.setOrderDate(formatGeneralDate(orderTransaction.getOrderDate()));
+        response.setOrderDate(formatGeneralDateTime(orderTransaction.getOrderDate()));
         OrderTransactionCustomerResponse customerResponse = new OrderTransactionCustomerResponse();
         customerResponse.setFirstName(orderTransaction.getCustomerFirstName());
         customerResponse.setLastName(orderTransaction.getCustomerLastName());

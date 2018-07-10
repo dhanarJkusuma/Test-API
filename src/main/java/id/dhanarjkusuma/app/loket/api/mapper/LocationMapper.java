@@ -4,7 +4,6 @@ import id.dhanarjkusuma.app.loket.config.MappingConfig;
 import id.dhanarjkusuma.app.loket.domain.Location;
 import id.dhanarjkusuma.app.loket.dtoapi.LocationCreateRequest;
 import id.dhanarjkusuma.app.loket.dtoapi.LocationResponse;
-import id.dhanarjkusuma.app.loket.helper.Utils;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,7 +11,7 @@ import org.mapstruct.MappingTarget;
 
 import java.util.Date;
 
-import static id.dhanarjkusuma.app.loket.helper.Utils.formatGeneralDate;
+import static id.dhanarjkusuma.app.loket.helper.Utils.formatGeneralDateTime;
 
 @Mapper(config = MappingConfig.class)
 public abstract class LocationMapper {
@@ -26,7 +25,7 @@ public abstract class LocationMapper {
 
     @AfterMapping
     protected void fillCreatedAt(@MappingTarget LocationResponse response, Location location){
-        response.setCreatedAt(formatGeneralDate(location.getCreatedAt()));
+        response.setCreatedAt(formatGeneralDateTime(location.getCreatedAt()));
     }
 
     @Mapping(target = "id", ignore = true)

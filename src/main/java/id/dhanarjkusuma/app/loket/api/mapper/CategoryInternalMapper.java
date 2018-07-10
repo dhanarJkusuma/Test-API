@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-import static id.dhanarjkusuma.app.loket.helper.Utils.formatGeneralDate;
+import static id.dhanarjkusuma.app.loket.helper.Utils.formatGeneralDateTime;
 
 @Mapper(config = MappingConfig.class)
 public abstract class CategoryInternalMapper {
@@ -22,7 +22,7 @@ public abstract class CategoryInternalMapper {
 
     @AfterMapping
     protected void fillDateString(@MappingTarget CategoryInternalResponse response, Category category){
-        response.setCreatedAt(formatGeneralDate(category.getCreatedAt()));
-        response.setUpdatedAt(formatGeneralDate(category.getUpdatedAt()));
+        response.setCreatedAt(formatGeneralDateTime(category.getCreatedAt()));
+        response.setUpdatedAt(formatGeneralDateTime(category.getUpdatedAt()));
     }
 }
