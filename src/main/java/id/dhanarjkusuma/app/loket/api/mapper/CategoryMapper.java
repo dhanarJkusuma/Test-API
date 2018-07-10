@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 @Mapper(config = MappingConfig.class)
 public abstract class CategoryMapper {
 
+    @Mapping(target = "id", source = "id")
     @Mapping(target = "name", source = "name")
     @Mapping(target = "slug", source = "slug")
     public abstract CategoryResponse categoryToCategoryResponse(Category category);
