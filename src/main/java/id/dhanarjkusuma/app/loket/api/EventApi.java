@@ -74,7 +74,7 @@ public class EventApi {
     @PostMapping(path = "/upload_thumbnail")
     public EventResponse uploadThumbnail(
             @RequestParam(name = "slug") String slug,
-            @RequestParam(value = "image",required = false) MultipartFile image
+            @RequestParam(value = "image") MultipartFile image
     ){
         Event event = eventService.getEvent(slug);
         Event savedEvent = eventService.uploadThumbnail(event.getId(), image);
@@ -84,7 +84,7 @@ public class EventApi {
     @PostMapping(path = "/upload_organizer")
     public EventResponse uploadOrganizerPhoto(
             @RequestParam(name = "slug") String slug,
-            @RequestParam(value = "image",required = false) MultipartFile image
+            @RequestParam(value = "image") MultipartFile image
     ){
         Event event = eventService.getEvent(slug);
         Event savedEvent = eventService.uploadOrganizer(event.getId(), image);
