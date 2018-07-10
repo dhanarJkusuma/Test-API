@@ -233,6 +233,74 @@ paths:
                 schema :
                   $ref: '#/components/schemas/BadRequestResponse'
 
+  "/event/upload_thumbnail":
+    post:
+      summary: API for upload thumbnail event
+      tags: ["Ticket Creator"]
+      parameters:
+      - in: query
+        name: slug
+        description: slug name event parameter
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: detail of event
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventResponse'
+        '404':
+          description: event not found
+          content:
+            application/json:
+              schema :
+                $ref: '#/components/schemas/NotFoundResponse'
+
+  "/event/upload_organizer":
+    post:
+      summary: API for upload organizer picture
+      tags: ["Ticket Creator"]
+      parameters:
+      - in: query
+        name: slug
+        description: slug name event parameter
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: detail of event
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventResponse'
+        '404':
+          description: event not found
+          content:
+            application/json:
+              schema :
+                $ref: '#/components/schemas/NotFoundResponse'
+
   "/event/get_info":
     get:
       summary: API for get detail category
