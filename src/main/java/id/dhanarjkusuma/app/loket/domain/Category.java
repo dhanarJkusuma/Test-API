@@ -27,8 +27,12 @@ public class Category {
     @Column(name = "is_deleted")
     private boolean isDeleted;
 
+
+
     public Category() {
         this.isDeleted = false;
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
     }
 
     public Long getId() {

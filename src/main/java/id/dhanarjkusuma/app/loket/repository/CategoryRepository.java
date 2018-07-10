@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
     Optional<Category> findBySlug(String slug);
     Optional<Category> findByIdAndIsDeletedFalse(Long id);
-    List<Category> findByIsDeletedFalseByOrderByNameAsc();
+    List<Category> findByIsDeletedFalseOrderByNameAsc();
     Optional<Category> findFirstBySlugAndIsDeletedFalse(String slug);
 }

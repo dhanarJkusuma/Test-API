@@ -41,7 +41,7 @@ public class LocationApi {
         return mapper.locationToLocationResponse(locationService.create(location));
     }
 
-    @GetMapping
+    @GetMapping(path = "/get_info")
     public List<LocationResponse> fetch(){
         List<Location> locationList = locationService.fetch();
         return locationList
@@ -49,6 +49,8 @@ public class LocationApi {
                 .map(mapper::locationToLocationResponse)
                 .collect(Collectors.toList());
     }
+
+
 
     @ExceptionHandler
     @ResponseStatus(BAD_REQUEST)

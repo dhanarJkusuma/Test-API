@@ -15,4 +15,4 @@ spring:
    show-sql: true
 
 storage:
-  base-path: D://agriloka
+  base-path: D://

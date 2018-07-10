@@ -22,7 +22,7 @@ public class OrderTransactionItem {
     @JoinColumn(name = "ticket_id")
     private Ticket ticket;
 
-    @Column(name = "quantity")
+    @Column(name = "qty")
     private Long quantity;
 
     @Column(name = "price")

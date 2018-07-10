@@ -2,6 +2,7 @@ package id.dhanarjkusuma.app.loket.domain;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -41,7 +42,7 @@ public class Event {
     @Column(name = "start_time")
     private String startTime;
 
-    @Column(name = "end_date")
+    @Column(name = "end_time")
     private String endTime;
 
     @OneToOne
@@ -60,6 +61,9 @@ public class Event {
 
     @Column(name = "is_deleted")
     private boolean isDeleted;
+
+    @OneToMany(mappedBy = "event")
+    private List<Ticket> tickets;
 
     public Event() {
         this.createdAt = new Date();
@@ -168,6 +172,14 @@ public class Event {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 
     public Date getCreatedAt() {

@@ -40,6 +40,11 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
+    public Ticket saveUpdatedTicket(Ticket ticket) {
+        return ticketRepository.save(ticket);
+    }
+
+    @Override
     public Ticket getTicket(Long id) throws TicketNotFoundException {
         return ticketRepository.findById(id).orElseThrow(() -> new TicketNotFoundException("Unknown ticket with id : " + id));
     }

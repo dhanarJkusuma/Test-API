@@ -43,11 +43,10 @@ public class CategoryInternalApi {
     public CategoryInternalResponse create(@Valid @RequestBody CategoryInternalCreateUpdateRequest request){
         Category category = new Category();
         category.setName(request.getName());
-        category.setSlug(Utils.toSlug(category.getName()));
         return mapper.categoryToCategoryInternalResponse(categoryService.create(category));
     }
 
-    @GetMapping
+    @GetMapping("/get_info")
     public List<CategoryInternalResponse> fetch(){
         List<Category> categories = categoryService.fetchCategories();
         return categories
@@ -56,7 +55,7 @@ public class CategoryInternalApi {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/get_info")
+    @GetMapping("/get_detail")
     public CategoryInternalResponse findOne(
             @RequestParam(name = "id") Long id
     ){

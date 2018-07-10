@@ -9,8 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EventRepository extends JpaRepository<Event, Long>, JpaSpecificationExecutor<Event> {
-    List<Event> findByIsDeletedFalseByOrderByCreatedAtDesc(Specification<Event> specification);
-    List<Event> findByIsDeletedFalseByOrderByCreatedAtDesc();
+    List<Event> findByIsDeletedFalseOrderByCreatedAtDesc();
     Optional<Event> findByIdAndIsDeletedFalse(Long id);
     Optional<Event> findBySlugAndIsDeletedFalse(String slug);
 }

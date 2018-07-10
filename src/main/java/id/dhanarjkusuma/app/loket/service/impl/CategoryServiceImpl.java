@@ -1,7 +1,9 @@
 package id.dhanarjkusuma.app.loket.service.impl;
 
 import id.dhanarjkusuma.app.loket.domain.Category;
+import id.dhanarjkusuma.app.loket.domain.Event;
 import id.dhanarjkusuma.app.loket.exception.CategoryNotFoundException;
+import id.dhanarjkusuma.app.loket.helper.Utils;
 import id.dhanarjkusuma.app.loket.repository.CategoryRepository;
 import id.dhanarjkusuma.app.loket.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+import static id.dhanarjkusuma.app.loket.helper.Utils.toSlug;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -23,12 +27,13 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category create(Category category) {
+        category.setSlug(getUniqueSlug(toSlug(category.getName())));
         return categoryRepository.save(category);
     }
 
     @Override
     public List<Category> fetchCategories() {
-        return categoryRepository.findByIsDeletedFalseByOrderByNameAsc();
+        return categoryRepository.findByIsDeletedFalseOrderByNameAsc();
     }
 
     @Override
@@ -58,4 +63,14 @@ public class CategoryServiceImpl implements CategoryService {
         existCategory.setIsDeleted(true);
         categoryRepository.save(existCategory);
     }
+
+    private String getUniqueSlug(String slug){
+        Optional<Category> event = categoryRepository.findFirstBySlugAndIsDeletedFalse(slug);
+        if(!event.isPresent()){
+            return slug;
+        }
+        Date now = new Date();
+        return String.join("-", slug, String.valueOf(now.hashCode()));
+    }
+
 }

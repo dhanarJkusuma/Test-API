@@ -3,6 +3,7 @@ package id.dhanarjkusuma.app.loket.domain;
 import javax.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 import static javax.persistence.EnumType.STRING;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -15,6 +16,9 @@ public class OrderTransaction {
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "id")
     private Long id;
+
+    @Column(name = "public_id")
+    private String publicId;
 
     @Column(name = "order_date")
     private Date orderDate;
@@ -42,6 +46,9 @@ public class OrderTransaction {
     @JoinColumn(name = "event_id")
     private Event event;
 
+    @OneToMany(mappedBy = "transaction", cascade = {CascadeType.ALL})
+    private List<OrderTransactionItem> items;
+
     public OrderTransaction() {
         this.orderDate = new Date();
     }
@@ -52,6 +59,14 @@ public class OrderTransaction {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPublicId() {
+        return publicId;
+    }
+
+    public void setPublicId(String publicId) {
+        this.publicId = publicId;
     }
 
     public Date getOrderDate() {
@@ -116,5 +131,13 @@ public class OrderTransaction {
 
     public void setEvent(Event event) {
         this.event = event;
+    }
+
+    public List<OrderTransactionItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderTransactionItem> items) {
+        this.items = items;
     }
 }

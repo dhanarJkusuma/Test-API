@@ -3,8 +3,8 @@ CREATE TABLE location (
     name VARCHAR(100) NOT NULL,
     city VARCHAR(100) NOT NULL,
     address TEXT NOT NULL,
-    latitude DECIMAL(10, 8) NOT NULL,
-    longitude DECIMAL(10, 8) NOT NULL,
+    latitude DOUBLE PRECISION NOT NULL,
+    longitude DOUBLE PRECISION NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE NOT NULL,
     updated_at TIMESTAMP WITH TIME ZONE NOT NULL,
     is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
@@ -60,6 +60,7 @@ CREATE TABLE ticket (
     actual_ticket_count BIGINT NOT NULL,
     description TEXT NOT NULL,
     flag VARCHAR(10) NOT NULL,
+	price NUMERIC(16,2) NOT NULL,
     start_date TIMESTAMP WITH TIME ZONE NOT NULL,
     end_date TIMESTAMP WITH TIME ZONE NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE NOT NULL,
@@ -74,6 +75,7 @@ CREATE TABLE ticket (
 
 CREATE TABLE order_transaction (
     id BIGSERIAL NOT NULL,
+    public_id VARCHAR(255) NOT NULL,
     order_date TIMESTAMP WITH TIME ZONE NOT NULL,
     customer_first_name VARCHAR(30) NOT NULL,
     customer_last_name VARCHAR(30) NOT NULL,
@@ -89,6 +91,8 @@ CREATE TABLE order_transaction (
                         REFERENCES event(id)
 );
 
+CREATE INDEX public_id_idx_order_transaction ON order_transaction (public_id);
+
 CREATE TABLE order_transaction_item (
     id BIGSERIAL NOT NULL,
     order_transaction_id BIGINT NOT NULL,
@@ -103,5 +107,11 @@ CREATE TABLE order_transaction_item (
                         REFERENCES order_transaction(id),
     CONSTRAINT fk_ticket_idx_ticket
                         FOREIGN KEY (ticket_id)
-                        REFERENCES ticket(id),
+                        REFERENCES ticket(id)
 );
+
+
+
+CREATE SEQUENCE service_order_transaction_public_id
+INCREMENT 1
+MINVALUE 83562;

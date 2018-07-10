@@ -4,6 +4,7 @@ import id.dhanarjkusuma.app.loket.domain.TicketFlag;
 import id.dhanarjkusuma.app.loket.helper.ValidateEnum;
 
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class TicketCreateRequest {
@@ -17,15 +18,15 @@ public class TicketCreateRequest {
     @NotNull(message = "Ticket quantity cannot be null.")
     private Long quantity;
 
-    @NotNull(message = "Ticket actualQuantity cannot be null.")
-    private Long actualQuantity;
-
     @NotNull(message = "Ticket description cannot be null.")
     private String description;
 
     @NotNull(message = "Ticket flag cannot be null.")
     @ValidateEnum(enumClass = TicketFlag.class)
-    private TicketFlag flag;
+    private String flag;
+
+    @NotNull(message = "Ticket price cannot be null.")
+    private BigDecimal price;
 
     @NotNull(message = "Ticket startDate cannot be null.")
     private Date startDate;
@@ -61,14 +62,6 @@ public class TicketCreateRequest {
         this.quantity = quantity;
     }
 
-    public Long getActualQuantity() {
-        return actualQuantity;
-    }
-
-    public void setActualQuantity(Long actualQuantity) {
-        this.actualQuantity = actualQuantity;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -77,12 +70,20 @@ public class TicketCreateRequest {
         this.description = description;
     }
 
-    public TicketFlag getFlag() {
+    public String getFlag() {
         return flag;
     }
 
-    public void setFlag(TicketFlag flag) {
+    public void setFlag(String flag) {
         this.flag = flag;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public Date getStartDate() {

@@ -3,6 +3,7 @@ package id.dhanarjkusuma.app.loket.dtoapi;
 public class EventResponse {
     private Long id;
     private String name;
+    private String slug;
     private String thumbnailPhoto;
     private String organizerName;
     private String organizerPhoto;
@@ -32,6 +33,14 @@ public class EventResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 
     public String getThumbnailPhoto() {

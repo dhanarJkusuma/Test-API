@@ -23,7 +23,7 @@ public class CategoryApi {
         this.mapper = mapper;
     }
 
-    @GetMapping
+    @GetMapping(path = "/get_info")
     public List<CategoryResponse> fetchCategories(){
         List<Category> categories = categoryService.fetchCategories();
         return categories

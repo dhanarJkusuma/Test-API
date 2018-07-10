@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface LocationRepository extends JpaRepository<Location, Long> {
-    List<Location> findByIsDeletedFalseByOrderByCreatedAtDesc();
+    List<Location> findByIsDeletedFalseOrderByCreatedAtDesc();
     Optional<Location> findByIdAndIsDeletedFalse(Long id);
 }

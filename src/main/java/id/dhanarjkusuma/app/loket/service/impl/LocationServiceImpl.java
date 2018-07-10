@@ -23,7 +23,7 @@ public class LocationServiceImpl implements LocationService {
 
     @Override
     public List<Location> fetch() {
-        return locationRepository.findByIsDeletedFalseByOrderByCreatedAtDesc();
+        return locationRepository.findByIsDeletedFalseOrderByCreatedAtDesc();
     }
 
     @Override
